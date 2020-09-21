@@ -26,3 +26,13 @@ Create Named Domain Users: AD DNS>Active directory Users and COmputers. GO to Ne
 
 Chnage wks01 DNS address to 10.0.5.5 (DNS on ad01)
 
+lab 3: Linux
+https://sites.google.com/a/champlain.edu/cncs-wiki/home/operating-systems/linux/network-configuration describes the process of setting a hostname and IP address on your linux server. 
+Helpful tips:
+1. SSH, or a secure shell, is a place where you can manage your linux systems remotemly. One does this by pulling up a shell, and typing ssh grace@dhcp01-grace, and that shall bring me to my linux system, on the wks01
+2..bash_history command brings up a file with your last 10 commands entered into the shell. The file can actually contain the last 500 commands you’ve typed. It often contains users username and passwords. This can cause security issues because if someone can get access to your hidden bash history file, then they can potentially get their hands on a multitude of passwords. A pro is, of course, you’re able to keep data that could be essential in your system, and pull it up at later times. 
+Helpful commands:
+1. history | head -n 10 - view last 10 commands in your history
+2. ls and ls-la shows hidden files
+3. .bash_history is viewing your bash history files
+
