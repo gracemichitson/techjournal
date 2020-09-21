@@ -36,3 +36,11 @@ Helpful commands:
 2. ls and ls-la shows hidden files
 3. .bash_history is viewing your bash history files
 
+
+the process for setting a static IP address on CentOS Linux :
+1. Type nmtui
+2. Click edit connections
+3. Where it says "IPv4 CONFIGURATION" click to change it to manual. Add your ip/submet/gateway/servers
+4. add your domain (grace.local)
+5. click the automatically connect X
+6. You should be good to go. Exit usinf the systemct1 restart network command. 
