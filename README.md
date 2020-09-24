@@ -44,3 +44,23 @@ the process for setting a static IP address on CentOS Linux :
 4. add your domain (grace.local)
 5. click the automatically connect X
 6. You should be good to go. Exit usinf the systemct1 restart network command. 
+
+Lab04- DHCP
+COnfiguring Dhcp services:
+1. in the root- vi /etc/dhcp/dhcp.conf this command will help you write to the configuration file
+2. to save and write changes :wq
+3.to start dhcp type: systemctl start dhcpd
+4. to enable dhcp: systemctl enable dhcpd
+5. To configure the firewall and allow incoming dhcp requests:
+      a. in root type firewall-cmd --list--all
+      b.enter
+      c. firewall-cmd --add-service+dhcp --permenent
+      d. direwall-cmd --reload
+      e. firewall-cmd --lis-all
+6. Change IPv4 proterties on wks01 to automatically obtain the ip address and DNS server addresses
+
+Wireshark ABOUT : https://docs.microsoft.com/en-us/windows-server/troubleshoot/dynamic-host-configuration-protocol-basics
+DHCP Discover: The client sends this, which identifies the client and the packet as a discover packet.
+DHCP Offer: This is a response packet to the discover packet. The source address is the DHCP server ip address. The destination address is the broadcast address.
+DHCP Request: The client repsonds to the offer by sending a request. The clients ip is 0.0.0.0 because it has yet to recieve permission from the server that it is okay to use the ip address offered.The DHCP ip is still broadcast because it may be holding a place for an Offer to be made to the client.
+DHCP ack: This is a response packet to DHCPREQUEST. It is completing the initialzation cycle. 
