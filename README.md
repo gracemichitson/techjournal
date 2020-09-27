@@ -64,3 +64,26 @@ DHCP Discover: The client sends this, which identifies the client and the packet
 DHCP Offer: This is a response packet to the discover packet. The source address is the DHCP server ip address. The destination address is the broadcast address.
 DHCP Request: The client repsonds to the offer by sending a request. The clients ip is 0.0.0.0 because it has yet to recieve permission from the server that it is okay to use the ip address offered.The DHCP ip is still broadcast because it may be holding a place for an Offer to be made to the client.
 DHCP ack: This is a response packet to DHCPREQUEST. It is completing the initialzation cycle. 
+
+File Permissions:
+
+To make a user: user add [name]
+
+To make a group named marketing: groupadd marketing
+
+To add people(bob) to that group(marketing): usermod -aG marketing bob
+
+TO add file permission(marketing):
+
+1. mkdir /marketing
+2. ls -l / shows all the files and there permissions
+3. su - bob (to become bob when youre in root)
+4. echo newproducts >/marketing/newproducts.txt
+5. to see who has permission echo bob > /marketing/newproducts.txt
+
+TO chnage from root to marketing on who owns the file: (as well as modifying who can wrx the file)
+
+1. ls -ld /marleting/
+2.chgrp marketing / marketing
+3. chmod g+w /marketing
+The g repreents group premissions. It will be either owner group or other.
