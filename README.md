@@ -87,3 +87,40 @@ TO chnage from root to marketing on who owns the file: (as well as modifying who
 2.chgrp marketing / marketing
 3. chmod g+w /marketing
 The g repreents group premissions. It will be either owner group or other.
+
+LAB ADDS Group Policy:
+
+1. Go to Local Servers on your Server Manager and right click on tools. Then select Active Directory Users and Computers.
+2. Create a new Organizational Unit by right clicking on grace.local.
+3. Call this OU SYS255, and add 3 more OU's called accounts,computers, and groups.
+4. Create users within the SYS255\accounts OU
+5.DRAG WKS01-Grace from grace.local\computers OU to the SYS255\computers OU
+6. Add a global security group within the SYS255\Groups, and name it custom-desktop. ALice and Bob are members. This allows you to change permissions based on the groups that some uers are in. This will be helpful if there was a different department in your system that should not have access to certian things.
+7. BEST PRACTICE FOR GROUPS: Many times, organizations will have a number of groups defined in their active directory domain. For this reason, it is a best practice to have a naming convention that purposefully describes what the groups do. A lot of times, groups allow or disallow users permission to folders on the network. Think departments. For this reason, a commonly found group membership is in the form of something like this:
+DepartmentName_RW_ACL or GP_WindowsIESettings_ACL
+This gives administrators an idea of what the group is for, and who may need to be a member
+
+Group policy- USER, this group policy will define the uder level settings.
+1. tools > Group Policy Management
+2. Right click on SYS255, and select Create a GPO in this domain, and link it here.
+3. Chnage the users to custon-desltop, which would be alice and bob.
+4. remove authenticated users, add domain Computers. 
+5. RIght click on your new GP and click edit, and choose what you want to edit out of the homescreen.
+
+TO CHANGE USERS AT THE LOGIN:
+1.Create and Link a new GPO within the SYS255\Computers OU called DisableLastLogin
+2. In the group policy management, right click and select edit for yout new OU 
+3. policies>Windows settings > security settings > local policies
+4. Choose at will. 
+
+HOW TO PREPARE FOR ASSESSMENT:
+1. Download all the Previous Labs done.
+2. Set aside a  day to review the labs.
+3. Review each topic that you had trouble with (the first three weeks). 
+4. Take notes.
+5. Review Github Tech Journal.
+6. Ask Qustions if there is any. 
+7. Pray. 
+
+
+
