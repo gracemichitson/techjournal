@@ -122,5 +122,25 @@ HOW TO PREPARE FOR ASSESSMENT:
 6. Ask Qustions if there is any. 
 7. Pray. 
 
+Lab7: Server Core and Administrator Tools
 
+In FS01, type the command sconfig to configure the IP, Subnet Mask, Default Gateway, and DNS Server. Make sure to add what domain you are in in the same GUI.
+
+NOTE** After changing everything, make sure to reboot.
+Login to your adm account through the other user options
+
+** RSAT
+Log in to ad02. Within the Remote Server Administration Tool Feature, add file service tools and files server resource manager.
+Add Roles and Features Wizard- RSAT>RAT>FIle Service Tools> make sure File Server Resource Manager TOols is clicked and hit next
+Add FS01 to the servers section in the server manager.
+
+You are now going to add roles and Features to your FS01 server, to do that, right click on the server. Keep the default settings down to Server Roles, then make sure you clicke File and Storage Services, Fil and iSCSI Services, and files server resourse manager
+
+To open the irewall for managing on the file Server: run the following command on fs01:  
+netsh advfirewall firewall set rule group=”Remote File Server Resource Manager Management” new enable=yes
+
+To create a new share on FS01: go to Server Manager> Shares and right click to create a new share. Make sure the location is on the fs01 server, and the Share Name is called Sales, and it gives the remote path to share. In the permsiions setting, you can decide who has access. This will allow different permissions for different users to access the \\fs01-grace\sales.
+
+To map a drive:
+Open Group Policy Management, create a new GPO, right click and choose edit. Go to User Configuration > Preferences > Windows Settings > Drive Maps. Right-click and select New > Mapped Drive. Ubder the general tab determine the action, location, reconnection, label, drive letter, connection, and hide/show drives. CLick apply, open a command prompt, and type GPUPDATE. This will update the group policy.
 
