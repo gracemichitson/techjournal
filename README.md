@@ -149,10 +149,10 @@ Configure Web01- go into nmtui like previous labs. Add domain, hostname, ip, net
 
 Disable remote root ssh access within the PermitRootLogin no flag in  /etc/ssh/sshd_config file. 
 To do this:
-# mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.conf_backup
-# systemctl restart httpd
+ mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.conf_backup
+systemctl restart httpd
 then
-# echo "<h1>This is a Test Page</h1>" > /var/www/html/index.html
+echo "<h1>This is a Test Page</h1>" > /var/www/html/index.html
 
 
 Restart sshd, logout and login in again, so that your new hostname takes hold in the active session.
