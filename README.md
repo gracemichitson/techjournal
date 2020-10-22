@@ -143,4 +143,43 @@ To create a new share on FS01: go to Server Manager> Shares and right click to c
 
 To map a drive:
 Open Group Policy Management, create a new GPO, right click and choose edit. Go to User Configuration > Preferences > Windows Settings > Drive Maps. Right-click and select New > Mapped Drive. Ubder the general tab determine the action, location, reconnection, label, drive letter, connection, and hide/show drives. CLick apply, open a command prompt, and type GPUPDATE. This will update the group policy.
+APACHE Lab:
+
+Configure Web01- go into nmtui like previous labs. Add domain, hostname, ip, netmask. Create a sudo user when done.
+
+Disable remote root ssh access within the PermitRootLogin no flag in  /etc/ssh/sshd_config file. 
+To do this:
+# mv /etc/httpd/conf.d/welcome.conf /etc/httpd/conf.d/welcome.conf_backup
+# systemctl restart httpd
+then
+# echo "<h1>This is a Test Page</h1>" > /var/www/html/index.html
+
+
+Restart sshd, logout and login in again, so that your new hostname takes hold in the active session.
+To instal httpd:
+sudo yum update httpd
+sudo yum install httpd
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+sudo firewall-cmd --reload
+sudo systemctl start httpd
+sudo systemctl status httpd
+
+To install php:
+yum install php
+
+To go into index.php:
+cd /var/www/html 
+once in the root command you want to vi index.php
+edit and see changed. 
+
+JOIN DOMAIN:
+sudo yum install realmd samba samba-common oddjob oddjob-mkhomedir sssd
+
+realm join --user=your-domain-admin-username@yourdomain.local yourdomain.local
+realm list
+
+
+
+
 
