@@ -180,6 +180,21 @@ realm join --user=your-domain-admin-username@yourdomain.local yourdomain.local
 realm list
 
 
+DHCP IS DOWN!
+
+Lab requirements: Have FS01 become the new DHCP server, and then assign ip addresses automatically. 
+Fist step: Go to Manage in the Server Manager and click add roles and features. 
+You will be adding the role of a DHCP server to fs01, follow through and click what applies : 
+
+
+This task will require you to add a server role to FS01, as well as a remote management feature to the server you are using to manage FS01. 
+
+Once installed, open the dhcp managemen console that can be accessed throgh tools. From here, you will be adding a new scope. through adding a new scope, this is where you assign the dns server along with ip address lease time and ranges. 
+
+Go to WKS and set up DHCP by going through the IPv4 section and clicking on 'obtain ip address automatically.' WKS will then show up on the Address Leases section in the DHCP management console. 
+
+
+
 
 
 
